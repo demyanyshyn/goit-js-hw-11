@@ -88,6 +88,7 @@ body {
   background: #6c8cff;
 }
 .gallery {
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
