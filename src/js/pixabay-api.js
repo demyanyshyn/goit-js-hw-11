@@ -27,7 +27,7 @@ export default class ImageQuery {
       .then(items => thanCall(items))
       .catch(error => cathCall(error));
   }
-  refreshPage() {
+  clearSearchQuery() {
     this.#options.params.q = ``;
     this.#options.params.page = 1;
   }

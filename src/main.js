@@ -19,7 +19,10 @@ function search(event) {
   event.preventDefault();
   if (isValidInput()) {
     gallery.loader();
-    pixABay.sendQuery(searchInput, render, errorShow);
+    const id = setTimeout(() => {
+      pixABay.sendQuery(searchInput, render, errorShow);
+      clearInterval(id);
+    }, 2000);
   } else {
     errorShow(`Sorry, input not valid`);
     refresh();
@@ -55,11 +58,10 @@ function buildLightshow() {
 function refresh() {
   gallery.clearGalery();
   input.value = ``;
-  pixABay.refreshPage();
+  pixABay.clearSearchQuery();
 }
 function errorShow(message) {
   message = message.message ? message.message : message;
-  console.log(message);
   let errorMessage = {
     message,
     icon: `material-icons-outlined`,
@@ -73,7 +75,6 @@ function errorShow(message) {
     maxWidth: `432px`,
   };
   iziToast.show(errorMessage);
-  iziToast.error(message);
 }
 
 const gallery = new RenderGallery();
