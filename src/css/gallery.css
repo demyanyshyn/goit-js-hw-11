@@ -84,6 +84,9 @@ body {
   color: white;
   border: none;
 }
+.search-btn:hover {
+  background: #6c8cff;
+}
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -91,9 +94,8 @@ body {
   gap: 24px;
   margin-top: 32px;
 }
-div .img-box {
+.img-box {
   display: flex;
-  /* max-width: 360px; */
   border: 1px solid #808080;
 }
 
@@ -119,6 +121,7 @@ div .img-box {
 }
 .content-header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -142,7 +145,7 @@ div .img-box {
   color: #2e2f42;
 }
 .loader {
-  color: #fff;
+  color: #000000;
   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
   font-size: 78px;

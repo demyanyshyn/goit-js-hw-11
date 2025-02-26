@@ -34,11 +34,13 @@ function isValidInput() {
 
 function render(feedback) {
   if (feedback.data.hits.length > 0) {
-    gallery.renderItems(data);
+    gallery.renderItems(feedback);
     buildLightshow();
-  } else
+  } else {
     errorShow(`Sorry, there are no images matching your search query. Please try again!
-`);
+  `);
+    gallery.clearGalery();
+  }
 }
 
 function buildLightshow() {
@@ -56,7 +58,9 @@ function refresh() {
   pixABay.refreshPage();
 }
 function errorShow(message) {
+  message = message.message ? message.message : message;
   let errorMessage = {
+    message,
     icon: `material-icons-outlined`,
     iconColor: '#fff',
     iconText: `dangerous`,
@@ -66,7 +70,6 @@ function errorShow(message) {
     timeout: 2000,
     theme: `dark`,
     maxWidth: `432px`,
-    message,
   };
   iziToast.show(errorMessage);
 }

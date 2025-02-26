@@ -41,7 +41,6 @@ export default class RenderGallery {
       `;
       })
       .join('');
-    console.log(this.gallery);
     this.clearGalery();
     this.gallery.insertAdjacentHTML('beforeend', markup);
   }
@@ -49,7 +48,7 @@ export default class RenderGallery {
     this.gallery.innerHTML = ``;
   }
   loader() {
-    const loader = `<span class="loader"></span>`;
+    const loader = `<div class="content-header">Loading images, please wait... <br/><span class="loader"></span></div>`;
     this.gallery.insertAdjacentHTML('beforeend', loader);
   }
 }
