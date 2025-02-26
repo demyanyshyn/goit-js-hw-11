@@ -59,6 +59,7 @@ function refresh() {
 }
 function errorShow(message) {
   message = message.message ? message.message : message;
+  console.log(message);
   let errorMessage = {
     message,
     icon: `material-icons-outlined`,
@@ -72,6 +73,7 @@ function errorShow(message) {
     maxWidth: `432px`,
   };
   iziToast.show(errorMessage);
+  iziToast.error(message);
 }
 
 const gallery = new RenderGallery();
