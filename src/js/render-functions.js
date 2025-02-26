@@ -49,6 +49,7 @@ export default class RenderGallery {
   }
   loader() {
     const loader = `<div class="content-header">Loading images, please wait... <br/><span class="loader"></span></div>`;
+    this.clearGalery();
     this.gallery.insertAdjacentHTML('beforeend', loader);
   }
 }
