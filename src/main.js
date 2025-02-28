@@ -4,8 +4,8 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import 'izitoast/dist/css/iziToast.min.css';
 
 // my inport
-import RenderGallery from './js/render-functions';
-import ImageQuery from './js/pixabay-api';
+import RenderGallery from './js/render-functions.js';
+import ImageQuery from './js/pixabay-api.js';
 
 const optionsSimpleLightBox = {
   captionDelay: 250,
@@ -13,8 +13,9 @@ const optionsSimpleLightBox = {
 };
 
 function getOn() {
-  form.addEventListener(`submit`, event => search(event));
+  form.addEventListener(`submit`, search);
 }
+
 function search(event) {
   event.preventDefault();
   if (isValidInput()) {
@@ -60,6 +61,7 @@ function refresh() {
   input.value = ``;
   pixABay.clearSearchQuery();
 }
+
 function errorShow(message) {
   message = message.message ? message.message : message;
   let errorMessage = {
